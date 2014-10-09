@@ -4,11 +4,11 @@ Java-Expression-Parser
 A Recursive-Descent Expression Parser
 oleh Herb Schildt
 
-Karena terdapat banyak expression, penting untuk diketahui apa yang merupakan expression. Program ini hanya cocok untuk satu macam expression, yaitu ekspresi numerik. Ekspresi numerik terdiri atas :
-. Angka
-. Operator +, -, /, *, ^, %, =
-. tanda kurung
-. variabel
+Karena terdapat banyak expression, penting untuk diketahui apa yang merupakan expression. Program ini hanya cocok untuk satu macam expression, yaitu ekspresi numerik. Ekspresi numerik terdiri atas : 
+* Angka 
+* Operator +, -, /, *, ^, %, = 
+* tanda kurung 
+* variabel 
 
 tanda ^ berarti perpangkatan, bukan operasi XOR seperti di Java, dan = adalah operator penugasan. contoh expresi :
 
