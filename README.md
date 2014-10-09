@@ -12,21 +12,21 @@ Karena terdapat banyak expression, penting untuk diketahui apa yang merupakan ex
 
 tanda ^ berarti perpangkatan, bukan operasi XOR seperti di Java, dan = adalah operator penugasan. contoh expresi :
 
-10-8
-(100-5) * 14/6
-a+b-c
-10^5
-a=10-b
+* 10-8 
+* (100-5) * 14/6 
+* a+b-c 
+* 10^5 
+* a=10-b 
 
 Berikut ini adalah urutan proses yang didahulukan berdasarkan operatornya
 
-Tertinggi
-+-(unary)
-^
-*/%
-+-
-=
-Terendah
+Tertinggi  
+1. +-(unary) 
+2. ^ 
+3. */% 
+4. +- 
+5. = 
+Terendah 
 
 Tertinggi berarti nomor satu untuk didahulukan.
 
