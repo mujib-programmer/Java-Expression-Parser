@@ -18,17 +18,14 @@ tanda ^ berarti perpangkatan, bukan operasi XOR seperti di Java, dan = adalah op
 * 10^5 
 * a=10-b 
 
-Berikut ini adalah urutan proses yang didahulukan berdasarkan operatornya
-
-**Tertinggi** 
+### Berikut ini adalah urutan proses yang didahulukan berdasarkan operatornya
 1. +-(unary) 
 2. ^ 
 3. */% 
 4. +- 
 5. = 
-**Terendah** 
 
-Tertinggi berarti nomor satu untuk didahulukan.
+Nomor 1 berarti prioritas didahulukan adalah yang paling besar, sedangkan nomor 5 adalah prioritas yang paling akhir.
 
 Semua variabel tidak case sensitive, jadi variabel a akan sama dengan variabel A. Dan aturan lainnya, semua nilai angka diasumsikan bertipe double meskipun kamu dengan mudah bisa memodifikasi parser untuk menangani tipe data yang lain.
 
