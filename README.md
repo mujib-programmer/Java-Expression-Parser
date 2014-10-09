@@ -20,13 +20,13 @@ tanda ^ berarti perpangkatan, bukan operasi XOR seperti di Java, dan = adalah op
 
 Berikut ini adalah urutan proses yang didahulukan berdasarkan operatornya
 
-Tertinggi  
+**Tertinggi** 
 1. +-(unary) 
 2. ^ 
 3. */% 
 4. +- 
 5. = 
-Terendah 
+**Terendah** 
 
 Tertinggi berarti nomor satu untuk didahulukan.
 
