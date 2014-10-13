@@ -35,4 +35,4 @@ dari buku Art Of Java
 
 ### Contoh penggunaan pada applet kalkulator
 
-![Alt text](/blob/master/expression calculator.png?raw=true "Applet Kalkulator Ekspresi")
+![Alt text](expression calculator.png?raw=true "Applet Kalkulator Ekspresi")
