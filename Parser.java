@@ -23,6 +23,9 @@ class Parser {
     private int expIdx;         // index saat ini pada ekspresi
     private String token;       // menyimpan token saat ini
     private int tokType;        // menyimpan tipe token
+    
+    // Array untuk variabel-variabel
+    private double vars[] =  new double[26]; // 26 adalah jumlah karakter alfabet
 
     // titik masuk parser
     public double evaluate( String expstr) throws ParserException {
@@ -36,7 +39,7 @@ class Parser {
         }
 
         // urai dan evaluasi ekspresi
-        result = evalExp2();
+        result = evalExp1();
 
         if (! token.equals( EOE )) {    // token terakhir harus EOE
             handleErr( SYNTAX );
@@ -45,6 +48,46 @@ class Parser {
         return result;
 
     } // akhir dari method evaluate
+
+    /**
+     * Proses penugasan/pengisian variabel
+     */
+    private double evalExp1() throws ParserException {
+        double result;
+        int varIdx;
+        int ttokType;
+        String temptoken;
+
+        if (tokType == VARIABLE) {
+            // simpan token lama
+            temptoken = new String(token);
+            ttokType = tokType;
+
+            // Hitung index variabel
+            varIdx = Character.toUpperCase( token.charAt( 0 ) ) - 'A';
+
+            getToken();
+
+            if ( ! token.equals("=") ) {
+                putBack(); // kembalikan token saat ini
+
+                // restore token lama --  bukan sebuah assignment/penugasan
+                token = new String(temptoken);
+                tokType =  ttokType;
+
+            }
+            else {
+                getToken(); // dapatkan bagian lainnya dari ekspresi
+                result =  evalExp2();
+
+                vars[ varIdx ] =  result;
+                return result;
+            }
+        } 
+
+        return evalExp2();
+
+    } // akhir dari method evalExp1
 
 
     /**
@@ -213,6 +256,12 @@ class Parser {
 
                 getToken();
                 break;
+
+            case VARIABLE:
+                result = findVar( token );
+                getToken();
+                break;
+
             default:
                 handleErr( SYNTAX );
                 break;
@@ -221,6 +270,33 @@ class Parser {
         return result;
 
     } // akhir dari method atom
+
+    /**
+     * Mengembalikan nilai variabel
+     */
+    private double findVar(String vname) throws ParserException {
+        if ( ! Character.isLetter( vname.charAt(0) ) ) {
+            handleErr( SYNTAX );
+            return 0.0;
+        }
+
+        return vars[ Character.toUpperCase( vname.charAt(0) ) - 'A' ];
+
+    } // akhir dari method findVar
+
+    /**
+     * Mengembalikan token ke input stream
+     */
+    private void putBack() {
+        if ( token == EOE ) {
+            return;
+        }
+
+        for ( int i = 0; i < token.length(); i++ ) {
+            expIdx--;
+        }
+
+    } // akhir dari method putBack
 
     /**
      * Menangani error
