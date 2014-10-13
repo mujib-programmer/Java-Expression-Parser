@@ -36,3 +36,11 @@ dari buku Art Of Java
 ### Contoh penggunaan pada applet kalkulator
 
 ![Alt text](expression calculator.png?raw=true "Applet Kalkulator Ekspresi")
+
+Tips:  
+* compile semua file java
+* buka applet dengan membuka file Calc.html dengan browser
+* atau buka applet dengan applet viewer dengan mengetikkan appletviewer Calc.html
+* isikan ekspresi matematika yang ingin dihitung hasilnya
+* tekan enter setelah menuliskan ekspresi yang ingin dihitung.
+* selamat mencoba 
