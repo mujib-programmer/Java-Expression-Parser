@@ -32,3 +32,7 @@ Semua variabel tidak case sensitive, jadi variabel a akan sama dengan variabel A
 Parser akan dibuat sedemikian rupa sehingga logika didalamnya jelas dan mudah difahami, hanya pengecekan kesalahan dasar yang dimasukkan.
 
 dari buku Art Of Java
+
+### Contoh penggunaan pada applet kalkulator
+
+![Alt text](/blob/master/expression calculator.png?raw=true "Applet Kalkulator Ekspresi")
